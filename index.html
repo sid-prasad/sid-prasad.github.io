@@ -47,15 +47,15 @@
       padding-bottom: 8px;
     }
     .headshot {
-      width: 180px;
-      border-radius: 12px;
+      width: 130px;
+      border-radius: 3px;
       flex: 0 0 auto;
     }
     .bio h1 {
       margin: 0 0 8px 0;
       font-family: "Roboto Slab", serif;
       font-weight: 600;
-      font-size: clamp(26px, 3.5vw, 40px);
+      font-size: clamp(24px, 3.5vw, 1px);
       letter-spacing: 0.2px;
     }
     .bio p {
@@ -101,14 +101,14 @@
         align-items: center;
         text-align: center;
       }
-      .headshot { width: 140px; }
+      .headshot { width: 100px; }
       .bio p { font-size: 15px; }
       .container { padding: 18px 14px; }
     }
 
     /* Very small screens */
     @media (max-width: 380px) {
-      .headshot { width: 120px; }
+      .headshot { width: 100px; }
       .bio h1 { font-size: 24px; }
     }
   </style>
@@ -117,7 +117,7 @@
 <body>
   <div class="container">
     <header class="hero">
-      <img src="headshot.jpeg" alt="me" class="headshot" />
+      <img src="crop.jpg" alt="me" class="headshot" />
       <div class="bio">
         <h1>Siddharth Prasad</h1>
         <p>Research Assistant Professor<br>Toyota Technological Institute at Chicago</p>
@@ -132,16 +132,15 @@
       <p>
         I am a <a href="https://www.ttic.edu/research-assistant-professor/">Research Assistant Professor</a> at
         <a href="https://ttic.edu/">Toyota Technological Institute at Chicago (TTIC)</a>.
-        My research is at the interface of mechanism and market design, optimization and operations research
-        (specifically integer programming), and machine learning.
+        I work on topics at the
+        convergence of mechanism and market design, optimization and operations research, and machine learning.
       </p>
 
       <p>
-        I received a PhD in the Computer Science Department at Carnegie Mellon University, where I was advised by
+        I received a PhD in Computer Science from Carnegie Mellon University, where I was advised by
         <a href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
         <a href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>. During the PhD, I spent a summer working on
-        <a href="https://arxiv.org/pdf/2309.00940.pdf">recommender systems</a> at
-        <a href="https://research.google">Google Research</a>.
+        <a href="https://arxiv.org/pdf/2309.00940.pdf">recommender systems</a> at Google Research.
         Before the PhD, I received a B.S. in math and computer science from Caltech.
       </p>
 
@@ -158,6 +157,7 @@
 
       <h3>Research Papers</h3>
       <ul class="papers">
+
         <li><a href="https://arxiv.org/pdf/2505.13687">Revenue-Optimal Efficient Mechanism Design with General Type Spaces</a><br/>
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>
