@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Siddharth Prasad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ChatGPT generated html code. Hopefully it doesn't horribly break!!! -->
-
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;600&display=swap"
+    rel="stylesheet" />
 
   <style>
     /* Base */
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     :root {
       --fg: #111;
       --bg: #f4f4f4;
@@ -20,7 +24,12 @@
       --link: royalblue;
       --rule: #e6e6e6;
     }
-    html, body { height: 100%; }
+
+    html,
+    body {
+      height: 100%;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -31,7 +40,12 @@
       text-rendering: optimizeLegibility;
       text-align: justify;
     }
-    img { max-width: 100%; height: auto; display: block; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* Layout */
     .container {
@@ -46,16 +60,19 @@
       gap: 24px;
       padding-bottom: 8px;
     }
+
     .headshot {
       width: 130px;
       border-radius: 3px;
       flex: 0 0 auto;
     }
+
     .banner {
       height: 100%;
       border-radius: 3px;
       flex: 0 0 auto;
     }
+
     .bio h1 {
       margin: 0 0 8px 0;
       font-family: "Roboto Slab", serif;
@@ -63,16 +80,25 @@
       font-size: clamp(24px, 3.5vw, 1px);
       letter-spacing: 0.2px;
     }
+
     .bio p {
       margin: 6px 0;
       font-size: clamp(14px, 1.6vw, 16px);
       color: var(--fg);
     }
 
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: none; }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
 
-    main p { margin: 1rem 0; }
+    a:hover {
+      text-decoration: none;
+    }
+
+    main p {
+      margin: 1rem 0;
+    }
 
     h3 {
       font-family: "Roboto Slab", serif;
@@ -90,26 +116,36 @@
     .papers {
       padding-left: 1.2rem;
     }
+
     .papers li {
       margin: 0.75rem 0;
-      overflow-wrap: anywhere; /* prevent overflow on long links */
+      overflow-wrap: anywhere;
+      /* prevent overflow on long links */
     }
-    .author-link { color: inherit;}
-     .author-link:hover {
-         text-decoration: underline;
-      }
+
+    .author-link {
+      color: inherit;
+    }
+
+    .author-link:hover {
+      text-decoration: underline;
+    }
 
     /* Top nav */
     .top-nav {
       margin-left: auto;
       align-self: flex-start;
     }
+
     .top-nav a {
       font-size: 15px;
       color: var(--muted);
       letter-spacing: 0.5px;
     }
-    .top-nav a:hover { color: var(--fg); }
+
+    .top-nav a:hover {
+      color: var(--fg);
+    }
 
     /* Small screens */
     @media (max-width: 760px) {
@@ -118,15 +154,29 @@
         align-items: center;
         text-align: center;
       }
-      .headshot { width: 100px; }
-      .bio p { font-size: 15px; }
-      .container { padding: 18px 14px; }
+
+      .headshot {
+        width: 100px;
+      }
+
+      .bio p {
+        font-size: 15px;
+      }
+
+      .container {
+        padding: 18px 14px;
+      }
     }
 
     /* Very small screens */
     @media (max-width: 380px) {
-      .headshot { width: 100px; }
-      .bio h1 { font-size: 24px; }
+      .headshot {
+        width: 100px;
+      }
+
+      .bio h1 {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -168,7 +218,8 @@
       </p>
 
       <p>
-        <strong><a href="https://www.youtube.com/watch?v=pq2Yb2Qm3j4">Research@TTIC talk about some of my PhD research</a></strong>
+        <strong><a href="https://www.youtube.com/watch?v=pq2Yb2Qm3j4">Research@TTIC talk about some of my PhD
+            research</a></strong>
       </p>
 
       <hr />
@@ -176,115 +227,140 @@
       <h3>Research Papers</h3>
       <ul class="papers">
 
-        <li><a href="https://arxiv.org/pdf/2302.14234.pdf">Bicriteria Multidimensional Mechanism Design with Side Information</a><br/>
+        <li><a href="https://arxiv.org/pdf/2302.14234.pdf">Bicriteria Multidimensional Mechanism Design with Side
+            Information</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          Mathematics of Operations Research, 2026 <small>(Supersedes our <a href="#neurips23">NeurIPS 2023 paper</a>)</small>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>Mathematics of Operations Research</em> 2026 <small>(Supersedes our <a href="#neurips23">NeurIPS 2023
+              paper</a>)</small>
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2505.13687">Revenue-Optimal Efficient Mechanism Design with General Type Spaces</a><br/>
+        <li><a href="papers/core_aaai-26.pdf">Weakest Bidder Types and New Core-Selecting Combinatorial
+            Auctions</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>AAAI Conference on Artificial Intelligence (AAAI) </em> 2026 <span style="color:orangered">[Oral
+            presentation]</span>
         </li>
 
-        <li><a href="papers/core_aaai-26.pdf">Weakest Bidder Types and New Core-Selecting Combinatorial Auctions</a><br/>
+        <li><a href="https://arxiv.org/pdf/2505.13687">Revenue-Optimal Efficient Mechanism Design with General Type
+            Spaces</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          AAAI Conference on Artificial Intelligence (AAAI), 2026 <span style="color:orangered">[Oral presentation]</span>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>arXiv</em> 2025
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2401.13773.pdf">New Sequence-Independent Lifting Techniques for Cover Inequalities and When They Induce Facets</a><br/>
+        <li><a href="https://arxiv.org/pdf/2401.13773.pdf">New Sequence-Independent Lifting Techniques for Cover
+            Inequalities and When They Induce Facets</a><br />
           with <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a>,
           <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a>, and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          International Joint Conference on Artificial Intelligence (IJCAI), 2025<br/>
-          <a href="https://www.mixedinteger.org/2024/posters.html"><span style="color:orangered">[Best poster award (honorable mention) at MIP workshop, 2024]</span></a>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>International Joint Conference on Artificial Intelligence (IJCAI) </em> 2025<br />
+          <a href="https://www.mixedinteger.org/2024/posters.html"><span style="color:orangered">[Best poster award
+              (honorable mention) at MIP workshop 2024]</span></a>
         </li>
 
-        <li><a href="papers/aaai-25.pdf">Increasing Revenue in Efficient Combinatorial Auctions by Learning to Generate Artificial Competition</a><br/>
+        <li><a href="papers/aaai-25.pdf">Increasing Revenue in Efficient Combinatorial Auctions by Learning to Generate
+            Artificial Competition</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          AAAI Conference on Artificial Intelligence (AAAI), 2025<br/>
-
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>AAAI Conference on Artificial Intelligence (AAAI) </em> 2025<br />
         </li>
 
-        <li id="neurips23"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/file/8039ca1e9860daab3a79e45d010d5398-Paper-Conference.pdf">Bicriteria Multidimensional Mechanism Design with Side Information</a><br/>
+        <li id="neurips23"><a
+            href="https://proceedings.neurips.cc/paper_files/paper/2023/file/8039ca1e9860daab3a79e45d010d5398-Paper-Conference.pdf">Bicriteria
+            Multidimensional Mechanism Design with Side Information</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          Conference on Neural Information Processing Systems (NeurIPS), 2023<br/>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>Conference on Neural Information Processing Systems (NeurIPS)</em> 2023<br />
           <a href="https://www.sigecom.org/exchanges/volume_21/1/BALKANSKI.pdf">[sigecom reading list]</a>
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2309.00940.pdf">Content Prompting: Modeling Content Provider Dynamics to Improve User Welfare in Recommender Ecosystems</a><br/>
-          with <a class="author-link" href="https://scholar.google.com/citations?user=Gc65LRwAAAAJ&hl=en">Martin Mladenov</a> and
-          <a class="author-link" href="https://research.google/people/craigboutilier/">Craig Boutilier</a><br/>
-          RecSys Workshop on Causality, Counterfactuals, and Sequential Decision Making (CONSEQUENCES), 2023<br/>
+        <li><a href="https://arxiv.org/pdf/2309.00940.pdf">Content Prompting: Modeling Content Provider Dynamics to
+            Improve User Welfare in Recommender Ecosystems</a><br />
+          with <a class="author-link" href="https://scholar.google.com/citations?user=Gc65LRwAAAAJ&hl=en">Martin
+            Mladenov</a> and
+          <a class="author-link" href="https://research.google/people/craigboutilier/">Craig Boutilier</a><br />
+          <em>RecSys Workshop on Causality, Counterfactuals, and Sequential Decision Making (CONSEQUENCES)</em> 2023<br />
           <a href="https://youtu.be/WRRnsZfcQ9g?t=3833">[recsys talk]</a>
         </li>
 
-        <li><a href="papers/GMI_cuts.pdf">Structural Analysis of Branch-and-Cut and the Learnability of Gomory Mixed Integer Cuts</a><br/>
+        <li><a href="papers/GMI_cuts.pdf">Structural Analysis of Branch-and-Cut and the Learnability of Gomory Mixed
+            Integer Cuts</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a>,
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>, and
-          <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br/>
-          Conference on Neural Information Processing Systems (NeurIPS), 2022
-          <span style="color:orangered">[Oral presentation]</span><br/>
-          <a href="https://slideslive.com/38990142/structural-analysis-of-branchandcut-and-the-learnability-of-gomory-mixed-integer-cuts">[video]</a>
+          <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br />
+          <em>Conference on Neural Information Processing Systems (NeurIPS)</em> 2022
+          <span style="color:orangered">[Oral presentation]</span><br />
+          <a
+            href="https://slideslive.com/38990142/structural-analysis-of-branchandcut-and-the-learnability-of-gomory-mixed-integer-cuts">[video]</a>
         </li>
 
-        <li><a href="https://openreview.net/pdf?id=Ry9iNlpUy1-">Maximizing Revenue under Market Shrinkage and Market Uncertainty</a><br/>
+        <li><a href="https://openreview.net/pdf?id=Ry9iNlpUy1-">Maximizing Revenue under Market Shrinkage and Market
+            Uncertainty</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          Conference on Neural Information Processing Systems (NeurIPS), 2022<br/>
-          <a href="https://slideslive.com/38990148/maximizing-revenue-under-market-shrinkage-and-market-uncertainty">[video]</a>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>Conference on Neural Information Processing Systems (NeurIPS)</em> 2022<br />
+          <a
+            href="https://slideslive.com/38990148/maximizing-revenue-under-market-shrinkage-and-market-uncertainty">[video]</a>
         </li>
 
-        <li><a href="https://drops.dagstuhl.de/opus/volltexte/2022/16632/pdf/LIPIcs-CP-2022-3.pdf">Improved Sample Complexity Bounds for Branch-and-Cut</a><br/>
+        <li><a href="https://drops.dagstuhl.de/opus/volltexte/2022/16632/pdf/LIPIcs-CP-2022-3.pdf">Improved Sample
+            Complexity Bounds for Branch-and-Cut</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a>,
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>, and
-          <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br/>
-          International Conference on Principles and Practice of Constraint Programming (CP), 2022
+          <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br />
+          <em>International Conference on Principles and Practice of Constraint Programming (CP)</em> 2022
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2106.04033">Sample Complexity of Tree Search Configuration: Cutting Planes and Beyond</a><br/>
+        <li><a href="https://arxiv.org/pdf/2106.04033">Sample Complexity of Tree Search Configuration: Cutting Planes
+            and Beyond</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a>,
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>, and
-          <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br/>
-          Conference on Neural Information Processing Systems (NeurIPS), 2021
-          <span style="color:orangered">[Spotlight]</span><br/>
-          <a href="https://slideslive.com/38968874/sample-complexity-of-tree-search-configuration-cutting-planes-and-beyond">[video]</a>
+          <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br />
+          <em>Conference on Neural Information Processing Systems (NeurIPS)</em> 2021
+          <span style="color:orangered">[Spotlight]</span><br />
+          <a
+            href="https://slideslive.com/38968874/sample-complexity-of-tree-search-configuration-cutting-planes-and-beyond">[video]</a>
         </li>
 
-        <li><a href="papers/LWI.pdf">Learning Within an Instance for Designing High-Revenue Combinatorial Auctions</a><br/>
+        <li><a href="papers/LWI.pdf">Learning Within an Instance for Designing High-Revenue Combinatorial
+            Auctions</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          International Joint Conference on Artificial Intelligence (IJCAI), 2021<br/>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>International Joint Conference on Artificial Intelligence (IJCAI) </em> 2021<br />
           <a href="https://www.ijcai.org/proceedings/2021/0005.pdf">[proceedings version]</a>
           <a href="https://ijcai-21.org/videos-slides/?video=3017">[video]</a>
         </li>
 
-        <li><a href="https://www.ijcai.org/Proceedings/2020/0047.pdf">Efficient Algorithms for Learning Revenue-Maximizing Two-Part Tariffs</a><br/>
+        <li><a href="https://www.ijcai.org/Proceedings/2020/0047.pdf">Efficient Algorithms for Learning
+            Revenue-Maximizing Two-Part Tariffs</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
-          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br/>
-          International Joint Conference on Artificial Intelligence (IJCAI), 2020<br/>
+          <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
+          <em>International Joint Conference on Artificial Intelligence (IJCAI) </em> 2020<br />
           <a href="https://www.youtube.com/watch?v=UniOJASWBi8">[video]</a>
         </li>
 
-        <li><a href="https://drops.dagstuhl.de/opus/volltexte/2020/11752/pdf/LIPIcs-ITCS-2020-67.pdf">Incentive Compatible Active Learning</a><br/>
-          with <a class="author-link" href="https://eml.berkeley.edu/~fechenique/index.html">Federico Echenique</a><br/>
-          Innovations in Theoretical Computer Science Conference (ITCS), 2020<br/>
+        <li><a href="https://drops.dagstuhl.de/opus/volltexte/2020/11752/pdf/LIPIcs-ITCS-2020-67.pdf">Incentive
+            Compatible Active Learning</a><br />
+          with <a class="author-link" href="https://eml.berkeley.edu/~fechenique/index.html">Federico
+            Echenique</a><br />
+          <em>Innovations in Theoretical Computer Science Conference (ITCS)</em> 2020<br />
           <a href="https://youtu.be/98wwbatoDUA?t=3065">[itcs talk]</a>
         </li>
 
-        <li><a href="https://drops.dagstuhl.de/opus/volltexte/2018/10155/pdf/LIPIcs-ITCS-2019-62.pdf">Learning Time Dependent Choice</a><br/>
-          with <a class="author-link" href="http://people.maths.ox.ac.uk/~chase/">Zachary Chase</a><br/>
-          Innovations in Theoretical Computer Science Conference (ITCS), 2019
+        <li><a href="https://drops.dagstuhl.de/opus/volltexte/2018/10155/pdf/LIPIcs-ITCS-2019-62.pdf">Learning Time
+            Dependent Choice</a><br />
+          with <a class="author-link" href="http://people.maths.ox.ac.uk/~chase/">Zachary Chase</a><br />
+          <em>Innovations in Theoretical Computer Science Conference (ITCS)</em> 2019
         </li>
 
         <li><a href="https://arxiv.org/pdf/1412.2310.pdf">Walks on Primes in Imaginary Quadratic Fields</a></li>
       </ul>
-      <hr/>
+      <hr />
     </main>
     <img src="IMG_9203.jpeg" class="banner" />
   </div>
 </body>
+
 </html>
