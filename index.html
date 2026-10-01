@@ -19,7 +19,7 @@
 
     :root {
       --fg: #111;
-      --bg: #f4f4f4;
+      --bg: #f7f6f3;
       --muted: #555;
       --link: royalblue;
       --rule: #e6e6e6;
@@ -112,15 +112,93 @@
       margin: 24px 0;
     }
 
-    /* Papers list */
-    .papers {
+    /* Selected research */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      column-gap: 1rem;
+      row-gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-heading h3 {
+      margin: 0;
+    }
+
+    .research-tabs {
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      width: 176px;
+      margin-left: auto;
+      padding: 3px;
+      border: 1px solid #ddd9d1;
+      border-radius: 7px;
+      background: rgba(17, 17, 17, 0.035);
+    }
+
+    .research-tab {
+      min-height: 34px;
+      border: 0;
+      border-radius: 5px;
+      padding: 0.4rem 0.8rem;
+      background: transparent;
+      color: var(--fg);
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+
+    .research-tab:hover {
+      color: var(--fg);
+    }
+
+    .research-tab.is-active {
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 1px 3px rgba(17, 17, 17, 0.1);
+    }
+
+    .research-tab:focus-visible {
+      outline: 2px solid rgba(65, 105, 225, 0.45);
+      outline-offset: 1px;
+    }
+
+    .research-list {
+      margin: 0;
       padding-left: 1.2rem;
     }
 
-    .papers li {
+    .research-list>li {
       margin: 0.75rem 0;
       overflow-wrap: anywhere;
-      /* prevent overflow on long links */
+    }
+
+    .research-list>li::marker {
+      color: #8f8b84;
+    }
+
+    .research-list[data-view="selected"]>li:not([data-selected]) {
+      display: none;
+    }
+
+    .research-list[data-view="selected"] .publication-details {
+      display: none;
+    }
+
+    .research-list[data-view="all"] .research-blurb {
+      display: none;
+    }
+
+    .research-blurb {
+      color: var(--fg);
+      margin: 0;
     }
 
     .author-link {
@@ -147,49 +225,6 @@
       color: var(--fg);
     }
 
-    /* Workshop popout */
-    .workshop-tag {
-      position: relative;
-      display: inline-block;
-      cursor: default;
-      color: var(--muted);
-      font-size: 0.88em;
-      border-bottom: 1px dotted var(--muted);
-      user-select: none;
-    }
-
-    .workshop-popout {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: calc(100% + 4px);
-      background: #fff;
-      border: 1px solid #d0d0d0;
-      border-radius: 5px;
-      padding: 8px 12px;
-      min-width: 260px;
-      max-width: 420px;
-      z-index: 100;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.13);
-      font-size: 0.92em;
-      line-height: 1.55;
-      color: var(--fg);
-      white-space: normal;
-    }
-
-    .workshop-popout ul {
-      margin: 4px 0 0 0;
-      padding-left: 1.1rem;
-    }
-
-    .workshop-popout li {
-      margin: 2px 0;
-    }
-
-    .workshop-tag:hover .workshop-popout {
-      display: block;
-    }
-
     /* Small screens */
     @media (max-width: 760px) {
       header.hero {
@@ -208,6 +243,18 @@
 
       .container {
         padding: 18px 14px;
+      }
+
+      .section-heading {
+        gap: 0.5rem;
+      }
+
+      .research-tabs {
+        max-width: 100%;
+      }
+
+      .research-tab {
+        min-height: 44px;
       }
     }
 
@@ -230,9 +277,8 @@
       <img src="crop.jpg" alt="me" class="headshot" />
       <div class="bio">
         <h1>Siddharth Prasad</h1>
-        <p>Research Assistant Professor<br>Toyota Technological Institute at Chicago</p>
+        <!-- <p>Research Assistant Professor<br>Toyota Technological Institute at Chicago</p> -->
         <p>sprasad at ttic dot edu<br>
-          <a href="cv.pdf">CV</a> |
           <a href="https://scholar.google.com/citations?user=qW72Z4YAAAAJ">Google Scholar</a>
         </p>
       </div>
@@ -241,9 +287,10 @@
 
     <main>
       <p>
-        I am a computer scientist working on topics at the
-        convergence of AI, (market) mechanism design, and optimization/operations research.
-        I am currently a <a href="https://www.ttic.edu/research-assistant-professor/">Research Assistant Professor</a> at
+        I am a researcher working on <a href="https://leonidhurwicz.org/mechanism-design/">mechanism design</a> for
+        modern AI systems.
+        I am currently a <a href="https://www.ttic.edu/research-assistant-professor/">Research Assistant Professor</a>
+        at
         <a href="https://ttic.edu/">Toyota Technological Institute at Chicago (TTIC)</a>.
       </p>
 
@@ -260,43 +307,81 @@
         <a href="papers/phdthesis.pdf">Mechanism Design and Integer Programming in the Data Age</a>
       </p>
 
+      <!--
       <p>
         <strong><a href="https://www.youtube.com/watch?v=pq2Yb2Qm3j4">Research@TTIC talk about some of my PhD
             research</a></strong>
       </p>
+      -->
 
       <hr />
 
-      <h3>Research Papers</h3>
-      <ul class="papers">
+      <div class="section-heading" id="research">
+        <h3>Research</h3>
+        <div class="research-tabs" role="group" aria-label="Research view">
+          <button class="research-tab is-active" id="selected-research-tab" type="button" aria-controls="publications"
+            aria-pressed="true">Selected</button>
+          <button class="research-tab" id="publications-tab" type="button" aria-controls="publications"
+            aria-pressed="false">All</button>
+        </div>
+      </div>
 
-        <li><a href="https://arxiv.org/pdf/2605.06920">In-Context Credit Assignment via the Core</a><br />
+      <ul class="research-list" id="publications" data-view="selected">
+
+
+        <li data-selected
+          data-blurb='An auction for priority in LLM serving systems. Sits atop <a href="https://github.com/sgl-project/sglang">SGLang</a> with no performance degradation.'>
+          <a href="https://arxiv.org/pdf/2609.40070">Inference Auctions</a><br />
+          with <a class="author-link" href="https://keeganharris.github.io/">Keegan Harris</a>,
+          <a class="author-link" href="https://ashertrockman.com/">Asher Trockman</a>,
+          <a class="author-link" href="https://people.eecs.berkeley.edu/~nika/">Nika Haghtalab</a>, and
+          <a class="author-link" href="https://people.eecs.berkeley.edu/~jordan/">Michael Jordan</a><br />
+          arXiv preprint 2026
+        </li>
+
+        <li><a href="https://arxiv.org/pdf/2609.38554">Auctions with Price Predictions</a><br />
+          with
+          <a class="author-link" href="">Muthu Sundar</a>,
+          <a class="author-link" href="https://sites.google.com/view/alecsun/home">Alec Sun</a>, and
+          <a class="author-link" href="https://dravy.ttic.edu/">Dravyansh Sharma</a><br />
+          arXiv preprint 2026
+        </li>
+
+
+        <li data-selected data-blurb="New mechanisms for credit attribution for AI-generated content.">
+          <a href="https://arxiv.org/pdf/2605.06920">In-Context Credit Assignment via the Core</a><br />
           with <a class="author-link" href="https://keeganharris.github.io/">Keegan Harris</a> and
           <a class="author-link" href="https://ashertrockman.com/">Asher Trockman</a><br />
-          <a class="author-link" href="https://llm-incentives.com/">EC Workshop on Game Theory and Mechanism Design with LLMs</a> 2026 
+          <a class="author-link" href="https://llm-incentives.com/">EC Workshop on Game Theory and Mechanism Design with
+            LLMs</a> 2026
           <span style="color:orangered">[Spotlight talk]</span>
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2606.08638">Parameter Tuning with Generalization Guarantees for GPU-Accelerated Linear Programming</a><br />
+        <li><a href="https://arxiv.org/pdf/2606.08638">Parameter Tuning with Generalization Guarantees for
+            GPU-Accelerated Linear Programming</a><br />
           with <a class="author-link" href="https://dravy.ttic.edu/">Dravyansh Sharma</a><br />
           arXiv preprint 2026
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2302.14234.pdf">Bicriteria Multidimensional Mechanism Design with Side
+        <li data-selected
+          data-blurb="A general framework for mechanism design with predictions about the agents' types."><a
+            href="https://arxiv.org/pdf/2302.14234.pdf">Bicriteria Multidimensional Mechanism Design with Side
             Information</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
           <a class="author-link" href="https://pubsonline.informs.org/doi/10.1287/moor.2024.0729">
-              Mathematics of Operations Research</a> 2026 <small>(Supersedes our <a href="#neurips23">NeurIPS 2023
+            Mathematics of Operations Research</a> 2026 <small>(Supersedes our <a href="#neurips23">NeurIPS 2023
               paper</a>)</small>
         </li>
 
-        <li><a href="papers/core_aaai-26.pdf">Weakest Bidder Types and New Core-Selecting Combinatorial
+        <li data-selected
+          data-blurb="Directly improves the auction design used by various countries to award spectrum licenses."><a
+            href="papers/core_aaai-26.pdf">Weakest Bidder Types and New Core-Selecting Combinatorial
             Auctions</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
           <a class="author-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/38771">
-              AAAI Conference on Artificial Intelligence (AAAI)</a> 2026 <span style="color:orangered">[Oral
+            AAAI Conference on Artificial Intelligence (AAAI)</a> 2026 <span style="color:orangered">[Oral
             presentation]</span>
         </li>
 
@@ -307,13 +392,15 @@
           arXiv preprint 2025
         </li>
 
-        <li><a href="https://arxiv.org/pdf/2401.13773.pdf">New Sequence-Independent Lifting Techniques for Cover
+        <li data-selected
+          data-blurb="We invent a new cutting plane of practical relevance to MIP solvers and characterize when it is facet defining.">
+          <a href="https://arxiv.org/pdf/2401.13773.pdf">New Sequence-Independent Lifting Techniques for Cover
             Inequalities and When They Induce Facets</a><br />
           with <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a>,
           <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a>, and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
           <a class="author-link" href="https://www.ijcai.org/proceedings/2025/298">
-              International Joint Conference on Artificial Intelligence (IJCAI)</a> 2025<br />
+            International Joint Conference on Artificial Intelligence (IJCAI)</a> 2025<br />
           <a href="https://www.mixedinteger.org/2024/posters.html"><span style="color:orangered">[Best poster award
               (honorable mention) at MIP workshop 2024]</span></a>
         </li>
@@ -323,7 +410,7 @@
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
           <a class="author-link" href="https://ojs.aaai.org/index.php/AAAI/article/view/33482">
-              AAAI Conference on Artificial Intelligence (AAAI)</a> 2025<br />
+            AAAI Conference on Artificial Intelligence (AAAI)</a> 2025<br />
         </li>
 
         <li id="neurips23"><a
@@ -332,8 +419,8 @@
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
           <a class="author-link"
-              href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/8039ca1e9860daab3a79e45d010d5398-Abstract-Conference.html">
-              Conference on Neural Information Processing Systems (NeurIPS)</a> 2023<br />
+            href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/8039ca1e9860daab3a79e45d010d5398-Abstract-Conference.html">
+            Conference on Neural Information Processing Systems (NeurIPS)</a> 2023<br />
           <a href="https://www.sigecom.org/exchanges/volume_21/1/BALKANSKI.pdf">[sigecom reading list]</a>
         </li>
 
@@ -343,7 +430,7 @@
             Mladenov</a> and
           <a class="author-link" href="https://research.google/people/craigboutilier/">Craig Boutilier</a><br />
           <a class="author-link" href="https://sites.google.com/view/consequences2023/programme">
-              RecSys Workshop on Causality, Counterfactuals, and Sequential Decision Making (CONSEQUENCES)</a>
+            RecSys Workshop on Causality, Counterfactuals, and Sequential Decision Making (CONSEQUENCES)</a>
           2023<br />
         </li>
 
@@ -353,8 +440,8 @@
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>, and
           <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br />
           <a class="author-link"
-              href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/db2cbf43a349bc866111e791b58c7bf4-Abstract-Conference.html">
-              Conference on Neural Information Processing Systems (NeurIPS)</a> 2022
+            href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/db2cbf43a349bc866111e791b58c7bf4-Abstract-Conference.html">
+            Conference on Neural Information Processing Systems (NeurIPS)</a> 2022
           <span style="color:orangered">[Oral presentation]</span> <br />
         </li>
 
@@ -362,7 +449,8 @@
             Uncertainty</a><br />
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a> and
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a><br />
-          <a class="author-link" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/0aeb9a0f0a9715e853953ceb96531473-Abstract-Conference.html">
+          <a class="author-link"
+            href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/0aeb9a0f0a9715e853953ceb96531473-Abstract-Conference.html">
             Conference on Neural Information Processing Systems (NeurIPS)</a> 2022<br />
         </li>
 
@@ -380,7 +468,8 @@
           with <a class="author-link" href="http://www.cs.cmu.edu/~ninamf/">Nina Balcan</a>,
           <a class="author-link" href="http://www.cs.cmu.edu/~sandholm/">Tuomas Sandholm</a>, and
           <a class="author-link" href="https://vitercik.github.io/">Ellen Vitercik</a><br />
-          <a class="author-link" href="https://proceedings.neurips.cc/paper_files/paper/2021/hash/210b7ec74fc9cec6fb8388dbbdaf23f7-Abstract.html">
+          <a class="author-link"
+            href="https://proceedings.neurips.cc/paper_files/paper/2021/hash/210b7ec74fc9cec6fb8388dbbdaf23f7-Abstract.html">
             Conference on Neural Information Processing Systems (NeurIPS)</a> 2021
           <span style="color:orangered">[Spotlight]</span><br />
         </li>
@@ -418,10 +507,66 @@
 
         <li><a href="https://arxiv.org/pdf/1412.2310.pdf">Walks on Primes in Imaginary Quadratic Fields</a></li>
       </ul>
+
       <hr />
     </main>
-    <img src="IMG_9203.jpeg" class="banner" />
+    <img src="IMG_9203.jpeg" class="banner" alt="" />
   </div>
+
+  <script>
+    const selectedResearchTab = document.getElementById("selected-research-tab");
+    const publicationsTab = document.getElementById("publications-tab");
+    const researchList = document.getElementById("publications");
+
+    Array.from(researchList.children).forEach((entry) => {
+      const title = entry.firstElementChild;
+      const details = document.createElement("div");
+      details.className = "publication-details";
+
+      while (title.nextSibling) {
+        details.appendChild(title.nextSibling);
+      }
+
+      if (details.firstElementChild?.tagName === "BR") {
+        details.firstElementChild.remove();
+      }
+
+      const hasDetails = Array.from(details.childNodes).some((node) =>
+        node.nodeType === Node.ELEMENT_NODE || node.textContent.trim()
+      );
+
+      if (hasDetails) {
+        entry.appendChild(details);
+      }
+
+      if (entry.hasAttribute("data-selected")) {
+        const blurb = document.createElement("p");
+        blurb.className = "research-blurb";
+        blurb.innerHTML = entry.dataset.blurb;
+        entry.insertBefore(blurb, hasDetails ? details : null);
+      }
+    });
+
+    function setResearchView(showFull, updateUrl = true) {
+      researchList.dataset.view = showFull ? "all" : "selected";
+      selectedResearchTab.classList.toggle("is-active", !showFull);
+      publicationsTab.classList.toggle("is-active", showFull);
+      selectedResearchTab.setAttribute("aria-pressed", String(!showFull));
+      publicationsTab.setAttribute("aria-pressed", String(showFull));
+
+      if (updateUrl) {
+        history.replaceState(null, "", showFull ? "#publications" : "#research");
+      }
+    }
+
+    selectedResearchTab.addEventListener("click", () => setResearchView(false));
+    publicationsTab.addEventListener("click", () => setResearchView(true));
+
+    const initialTarget = window.location.hash
+      ? document.getElementById(window.location.hash.slice(1))
+      : null;
+    setResearchView(initialTarget === researchList || researchList.contains(initialTarget), false);
+  </script>
 </body>
 
 </html>
